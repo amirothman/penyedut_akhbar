@@ -1,4 +1,4 @@
-
+mkdir "collection"
 
 mkdir "collection/1malaysianews"
 
