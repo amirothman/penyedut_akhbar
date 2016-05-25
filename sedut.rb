@@ -5,67 +5,69 @@ require 'json'
 require 'date'
 
 Dir["crawlers/*.rb"].each {|file| require_relative file }
+while true
+  puts "1malaysianews"
+  get_1malaysianews
 
-puts "1malaysianews"
-# get_1malaysianews
+  puts "agendadaily"
+  get_agendadaily
 
-puts "agendadaily"
-# get_agendadaily
-# puts "astro_awani"
-# puts "bernama"
-# get_bernama
-#
-# puts "free_malaysia_today"
-# get_free_malaysia_today
-#
-# puts "harakah"
-# get_harakah
+  puts "bernama"
+  get_bernama
 
-puts "malaysia_chronicle"
-get_malaysia_chronicle
+  puts "free_malaysia_today"
+  get_free_malaysia_today
 
-puts "malaysia_edition"
-get_malaysia_edition
+  puts "harakah"
+  get_harakah
 
-puts "malaysia_today"
-get_malaysia_today
+  puts "malaysia_chronicle"
+  get_malaysia_chronicle
 
-puts "malaysiakini"
-get_malaysiakini
+  puts "malaysia_edition"
+  get_malaysia_edition
 
-puts "malaysian_insider"
+  puts "malaysia_today"
+  get_malaysia_today
 
-get_malaysian_insider
+  puts "malaysiakini"
+  get_malaysiakini
 
-puts "malaysianreserve"
+  puts "malaysianreserve"
 
-get_malaysianreserve
+  get_malaysianreserve
 
-puts "mykmu"
+  puts "mykmu"
 
-get_mykum
+  get_mykmu
 
-puts "nst"
+  puts "nst"
 
-get_nst
+  get_nst
 
-puts "the_ant_daily"
-get_the_ant_daily
+  puts "the_ant_daily"
+  get_the_ant_daily
 
-puts "the_rakyat_post"
-get_the_rakyat_post
+  puts "the_rakyat_post"
+  # rss error
+  # get_the_rakyat_post
 
-puts "the_star"
-get_the_star
+  #puts "the_star"
+  # rss error
+  #get_the_star
 
-puts "the_sun"
-get_the_sun
+  puts "the_sun"
+  get_the_sun
 
-puts "theheatmalaysia"
-get_theheatmalaysia
+  puts "theheatmalaysia"
+  ## rss error
+  ##get_theheatmalaysia
 
-puts "topic_malaysia"
-get_topix_malaysia
+  puts "topix_malaysia"
+  get_topix_malaysia
 
-puts "utusan"
-get_utusan
+  # puts "utusan"
+  # rss error
+  #get_utusan
+  sleep 60*15
+end

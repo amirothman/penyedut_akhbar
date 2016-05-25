@@ -22,7 +22,7 @@ begin
         date = item.pubDate
         date_hash = {year: date.year, month: date.month, day: date.day}
         title = item.title
-        json_hash = {content: content, link: item.link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
+        json_hash = {content: content, link: item.link,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
         puts JSON.pretty_generate(json_hash)
         # id = news_articles.insert_one(json_hash)
         #

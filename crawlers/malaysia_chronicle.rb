@@ -23,7 +23,7 @@ def get_malaysia_chronicle path="collection/malaysia_chronicle"
           # puts "title"
           title = doc.css("h2.itemTitle").first.text
           # puts title
-          json_hash = {content: content, link: item.link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
+          json_hash = {source:"malaysia_chronicle",content: content, link: item.link,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
           puts JSON.pretty_generate(json_hash)
           File.open("#{path}/#{json_hash[:pseudo_id]}.json","w") do |f|
             f.write(JSON.pretty_generate(json_hash))

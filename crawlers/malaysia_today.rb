@@ -29,7 +29,7 @@ def get_malaysia_today path="collection/malaysia_today"
         # puts "title"
         title = doc.css("h2").first.text
         # puts title
-        json_hash = {source: "malaysia_today",content: txt, link: page, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: page.gsub(/\W/,'_')}
+        json_hash = {source: "malaysia_today",content: txt, link: page,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: page.gsub(/\W/,'_')}
 
         puts JSON.pretty_generate(json_hash)
         File.open("#{path}/#{json_hash[:pseudo_id]}.json","w") do |f|

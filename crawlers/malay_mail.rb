@@ -18,7 +18,7 @@ def get_malay_mail path="collection/malay_mail"
         date = DateTime.now
         date_hash = {year: date.year, month: date.month, day: date.day}
         title = doc.css(".headlines").first.text
-        json_hash = {content: content, link: item.link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
+        json_hash = {source:"malay_mail",content: content, link: item.link,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
         puts JSON.pretty_generate(json_hash)
         File.open("#{path}/#{json_hash[:pseudo_id]}.json","w") do |f|
           f.write(JSON.pretty_generate(json_hash))

@@ -6,10 +6,10 @@ url = 'http://www.therakyatpost.com/category/news/feed/'
 open(url) do |rss|
   feed = RSS::Parser.parse(rss)
   feed.items.each do |item|
-
-    if news_articles.find(:link => item.link).to_a.size > 0
-      puts "Article already saved"
-    else
+    #
+    # if news_articles.find(:link => item.link).to_a.size > 0
+    #   puts "Article already saved"
+    # else
       puts item.link
       doc = Nokogiri::HTML(open(item.link))
       content = remove_invalid_utf8 doc.css(".singleContentPadding > p")[1..-2].text
@@ -23,13 +23,13 @@ open(url) do |rss|
       end
       date_hash = {year: date.year, month: date.month, day: date.day}
       title = doc.css(".singleTitle").first.text
-      json_hash = {content: content, link: item.link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
+      json_hash = {source:"the_rakyat_post",content: content, link: item.link,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
       puts JSON.pretty_generate(json_hash)
       File.open("#{path}/#{json_hash[:pseudo_id]}.json","w") do |f|
         f.write(JSON.pretty_generate(json_hash))
       end
 
-    end
+    # end
   end
 end
 

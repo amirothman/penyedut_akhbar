@@ -28,7 +28,7 @@ def get_the_star path="collection/the_star"
         title = doc.css(".headline").first.text
         # puts title
 
-        json_hash = {source: "the_star",content: content, link: link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: link.gsub(/\W/,'_')}
+        json_hash = {source: "the_star",content: content, link: link,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: link.gsub(/\W/,'_')}
         puts JSON.pretty_generate(json_hash)
         File.open("#{path}/#{json_hash[:pseudo_id]}.json","w") do |f|
           f.write(JSON.pretty_generate(json_hash))

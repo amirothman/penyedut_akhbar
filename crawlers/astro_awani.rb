@@ -18,7 +18,7 @@ def get_astro_awani path="collection/astro_awani"
         date = DateTime.parse(date_string)
         date_hash = {year: date.year, month: date.month, day: date.day}
         # title =
-        json_hash = {content: content, link: item.link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year}
+        json_hash = {source:"astro_awani",content: content, link: item.link,title: title, month: date.month,day: date.day,year: date.year}
         json = JSON.pretty_generate(json_hash)
         puts JSON.pretty_generate(json_hash)
         #news_articles.insert_one(json_hash)

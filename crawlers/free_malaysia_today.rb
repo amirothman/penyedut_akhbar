@@ -18,7 +18,7 @@ def get_free_malaysia_today path="collection/free_malaysia_today"
         date_hash = {year: date.year, month: date.month, day: date.day}
         title = doc.css("h1").text
         # puts title
-        json_hash = {source:"free_malaysia_today",content: content, link: item.link, date: date_hash,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
+        json_hash = {source:"free_malaysia_today",content: content, link: item.link,title: title, month: date.month,day: date.day,year: date.year, pseudo_id: item.link.gsub(/\W/,'_')}
         puts JSON.pretty_generate(json_hash)
 
         File.open("#{path}/#{json_hash[:pseudo_id]}.json","w") do |f|
